@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Application “Guess Number”</title>
+</head>
+<body>
+    
+    <section class="game">
+        <div class="container">
+            <h1>“Привет, я загадал число от <span class="min_span">min</span> до <span class="max_span">max</span> вашего диапазона. <br>Попробуй угадать его за <span class="count_span">x</span> попыток!”
+            </h1>
+            <div class="indicat">
+                <div class="att">
+                    <p>Осталось попыток</p>
+                    <h2 class="count_x">X</h2>
+                </div>
+                <div class="level">
+                    <h2 class="level_x">ХОЛОДНО</h2>
+                </div>
+            </div>
+            <form action="">
+                <input class="game__number" type="number" placeholder="Введите число" required>
+                <div class="btn">
+                    <button class="generate">ДА!</button>
+                    <button class="exit">Выход</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <div class="modal__bg">
+        <div class="modal__window">
+            <h3>НАСТРОЙКИ</h3>
+            <form action="">
+                <h4>Диапозон от 1 до 200</h4>
+                <div class="range">
+                    <div class="range__item">
+                        <p>от:</p>
+                        <input id="rangeMin" type="number" placeholder="от 1" required>
+                    </div>
+                    <div class="range__item">
+                        <p>до:</p>
+                        <input id="rangeMax" type="number" placeholder="до 200" required>
+                    </div>
+                </div>
+                <hr>
+                <h4>количества попыток</h4>
+                <div class="range">
+                    <div class="range__item">
+                        <p>от 1 до 15</p>
+                        <input id="rangeCount"  type="number"placeholder="от 1 до 15" required>
+                    </div>
+                </div>
+                <hr>
+                <button class="start_game">Начать игру</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal_bg_vic">
+        <div class="modal_vic">
+            <h2>Вы угадали число!!!<br>за <span class="vic_try"></span> попыток</h2>
+            <button class="continue">Сыграть еще раз?</button>
+        </div>
+    </div>
+    <div class="modal_bg_end">
+        <div class="modal_vic">
+            <h2>Вы проиграли!</h2>
+            <button class="continue">Сыграть еще раз?</button>
+        </div>
+    </div>
+
+    <script src="script/script.js"></script>
+</body>
+</html>

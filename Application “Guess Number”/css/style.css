@@ -1,0 +1,247 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+}
+
+.container{
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.game{
+    padding: 25px 0 25px 0;
+    box-shadow: 0 0 15px rgba(0,0,0, .1);
+}
+
+h1{
+    text-transform: uppercase;
+    text-align: center;
+    margin: 50px 0 30px 0;
+    color:rgba(13, 24, 85, 0.8);
+    transition: .5s all;
+}
+
+h1 span{
+    font-size: 40px;
+    transition: 1s all;
+}
+
+.count_x{
+    padding: 3px;
+    text-decoration: underline;
+    
+}
+
+.indicat{
+ display: flex;
+ justify-content: center; 
+ align-items: center;
+ margin-bottom: 25px;  
+}
+
+.att{
+    margin-right: 25px;
+    text-align: center;
+    padding-right: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.level_x{
+    text-transform: uppercase;
+    background-color: #00a7fe;
+    padding: 5px;
+    color: #fff;
+}
+
+
+.span_warning{
+    font-size: 60px;
+    color: red;
+}
+
+.game form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game input[type="number"]{
+    width: 500px;
+    padding: 25px;
+    font-size: 35px;
+    color:rgba(13, 24, 85, 0.8);
+    text-align: center;
+}
+
+.btn{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.generate, .exit{
+
+    width: 50%;
+    padding: 25px;
+    margin: 15px;
+}
+
+
+
+
+
+/*MODAL*/
+
+.modal__bg{
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+}
+
+.modal__window{
+    width: 300px;
+    padding: 25px;
+    background-color: rgba(97, 96, 96, 0.9);
+    border-radius: 15px;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 15px rgba(0,0,0, .3);
+    transition: .5s all;
+}
+
+.modal__window-hide{
+    top: -130%;
+}
+
+.modal__window h3{
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+
+}
+
+.modal__window form{
+    margin-top: 25px;
+}
+
+.modal__window h4{
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    
+}
+
+.range{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+
+
+.range p{
+    color:#fff;
+    text-align: center;
+}
+
+
+
+.range__item{
+    margin-right: 5px;
+}
+.range__item:last-child{
+    margin-right: 0;
+}
+
+.range input[type="number"], .start_game{
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 5px;
+    padding: 15px;
+    border: none;
+}
+
+.modal__window hr{
+    margin-top: 25px;
+}
+
+.start_game{
+    background-color:rgba(16, 31, 117, 0.513);
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s all
+}
+
+.start_game:hover{
+    background-color:rgba(13, 24, 85, 0.513);
+}
+
+.modal_bg_vic, .modal_bg_end{
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+}
+
+.modal_vic{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 200px;
+    border: 1px solid #fff;
+    background-color: rgb(255, 255, 255, .9);
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #fff;
+    box-shadow: 0 0 15px rgba(0,0,0, .3);
+}
+
+.modal_vic h2{
+    font-size: 32px;
+    text-transform: uppercase;
+    text-align: center;
+    color:#fe5a00;
+    
+}
+
+.continue{
+    padding: 15px;
+    width: 250px;
+    margin-top: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    
+}
+
+
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+
+
