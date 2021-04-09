@@ -1,8 +1,8 @@
 
 var btnGenerate = document.querySelector(".btnGenerate");
 var btnReset = document.querySelector(".btnReset");
-var minInputText = document.querySelector(".min");
-var maxInputText = document.querySelector(".max");
+var minInputText = document.querySelector(".random__min");
+var maxInputText = document.querySelector(".random__max");
 var randomTitle = document.querySelector(".random__title");
 var randomNumber = document.querySelector(".random__number");
 var fin = document.querySelector(".random__fin");
@@ -30,17 +30,7 @@ function generateRandom(min, max){
 	return random;
 }
 
-function getSortArr(arr){
-	for(var i = 1; i < arr.length; i++){
-		var current = arr[i];
-		for(var y = i; y > 0 && arr[y - 1] > current; y++){
-			arr[y] = arr[y - 1];
-		}
-		arr[y] = current;
-	}
 
-	return arr;
-}
 
 
 
@@ -65,7 +55,7 @@ btnGenerate.addEventListener("click", function(e){
 		addNumber = generateRandom(min, max);
 		if(arr.indexOf(addNumber) === -1){
 			arr.push(addNumber);
-			randomNumber.innerHTML += addNumber + ", ";
+			randomNumber.innerHTML += addNumber + " ";
 			count++;
 			console.log(arr);
 		}
