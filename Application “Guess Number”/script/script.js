@@ -53,7 +53,7 @@ var modalBg = function(){
 
 var random = function(min, max){
     var r = Math.random() * (max - min + 1) + min;
-     return Math.floor(r);
+    return Math.floor(r);
 };
 
 
