@@ -2,38 +2,42 @@
 
 function cinema(){
     var res = 0;
+    var resAnsw = "";
     for(var i = 0; i < arguments.length; i++){
        if(arguments[i] === 25){
            res += arguments[i];
        }else if(arguments[i] === 50){
            if(res >= 25){
-            console.log("YES");
+            res += 25;
+            resAnsw = "YES";
            }else{
-            console.log("NO");
+            return  "NO";
            }
        }else if(arguments[i] === 100){
            if(res >= 75){
-            console.log("YES");   
+            res += 25;
+            resAnsw = "YES";   
            }else{
-            console.log("NO");
+           return "NO";
            }
            
        }
     }
+    return resAnsw;
 }
 
-cinema(25,50,100);
+console.log(cinema(25,100,50));
 
 // 2
 
-function add(a, b)	{
+function getPlus(a, b)	{
 	if (b == 0) return a;
 	var sum = a ^ b;			
 	var carry = (a & b) << 1;	
-	return add(sum, carry);		
+	return getPlus(sum, carry);		
 }
 
-console.log(add(5,20));
+console.log(getPlus(5,20));
 
 /*console.log((5 ^ 20));
 console.log((5 & 20) << 1);
@@ -43,24 +47,32 @@ console.log((17 & 8) << 1);*/
 
 //3
 
-var postCount = 0;
-var commitCount = 0;
-function getPostCommitAuthor(obj, author){
 
+function getPostCommitAuthor(){
+
+    var postCount = 0;
+    var commitCount = 0;
+
+   return function postCommit(obj, author){
     for(var i = 0; i < obj.length; i++){
-       for(var keys in obj[i]){
-            if(typeof obj[i][keys] === "object") getPostCommitAuthor(obj[i][keys], author);
-                if(obj[i][keys] === author){
-                    if(obj[i].hasOwnProperty('comment')){
-                        commitCount++;
-                    }
-                    if(obj[i].hasOwnProperty('post')){
-                        postCount++;
-                    } 
-            }
-        }
-    }
-    return author + ": " + commitCount + " - Commit" + " / " + postCount + " - Post";
+        for(var keys in obj[i]){
+             if(typeof obj[i][keys] === "object") postCommit(obj[i][keys], author);
+                 if(obj[i][keys] === author){
+                     if(obj[i].hasOwnProperty('comment')){
+                         commitCount++;
+                     }
+                     if(obj[i].hasOwnProperty('post')){
+                         postCount++;
+                     } 
+             }
+         }
+     }
+     return {
+         author: author,
+         Commit: commitCount,
+         Post: postCount
+     };
+   }; 
 
 }
 
@@ -129,7 +141,9 @@ let listOfPosts2 = [
 
 ];
 
-console.log(getPostCommitAuthor(listOfPosts2, 'Uncle'));
+
+var objRetPostCommit = getPostCommitAuthor();
+console.log(objRetPostCommit(listOfPosts2, 'Uncle'));
 
 
 // 4.Напишите функцию кеш
@@ -140,8 +154,15 @@ var complexFunction = function (arg1,arg2) {
 
 
 var cashe = function (fanc){
+
     var arr = []; 
+
     return function(arg1, arg2){
+
+        if(typeof fanc != "function"){
+            return false;
+        }
+
         var x = arg1;
         var y = arg2;
         if(arr.length > 0){
@@ -162,8 +183,11 @@ console.log(addCashe(5,5));
 console.log(addCashe(5,5));
 console.log(addCashe(6,5));
 console.log(addCashe(6,5));
+console.log(addCashe(6,5));
 console.log(addCashe("foo","fff"));
 console.log(addCashe("foo","fff"));
+
+module.exports = {cinema, getPlus, getPostCommitAuthor, complexFunction, cashe};
 
  
   
