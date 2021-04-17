@@ -403,6 +403,8 @@ function getSwap(arr){
 
 console.log(getSwap([1,2,3,4]));
 
+// 9. Отсортировать массив (пузырьком (Bubble), выбором (Select), вставками (Insert)) 
+
 // Bubble
 
 let arrBub = [15,14,13,12,-1,5,18,1,1,0];
@@ -433,6 +435,100 @@ function bubbleSort(arr){
 
 console.log(bubbleSort(arrBub));
 
+//select
+
+function sortSelect(arr){
+	if(validArr(arr)){
+		return "Введены некорректные данные";
+	}
+
+	for(var i = 0; i < arr.length; i++){
+		var min = arr[i];
+		var index = i;
+		for(var y = i + 1; y < arr.length; y++){
+			if(min > arr[y]){
+				min = arr[y];
+				index = y;
+			}
+		}
+		arr[index] = arr[i];
+		arr[i] = min;
+	}
+	return arr;
+}
+
+console.log(sortSelect(arrBub));
+
+// insert
+
+function sortInsert(arr){
+	if(validArr(arr)){
+		return "Введены некорректные данные";
+	}
+
+	for(var i = 1; i < arr.length; i++){
+		var cur = arr[i];
+		for(var y = i; y > 0 && arr[y - 1] > cur; k--){
+			arr[y] = arr[k - 1];
+		}
+		arr[y] = cur;
+	}
+
+	return arr;
+
+}
+
+console.log(sortInsert(arrBub));
+
+/* --- Функции --- */
+
+// 1. Получить строковое название дня недели по номеру дня. 
+
+function getDay(arg){
+	if(valid(arg)){
+		return "Введены некорректные данные";
+	}
+
+	var arrDay = ["Понедельник","Вторник","Среда","Четверг","Пятница","Суббота","Воскресенье"];
+	return arrDay[arg - 1];
+}
+
+console.log(getDay(7));
+
+//
+
+function word(arg){
+	var x = ["ноль", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять", "десять", "одиннадцать", "двенадцать", "тринадцать", "четырнадцать", "пятнадцать", "шестнадцать", "семнадцать", "восемнадцать", "девятнадцать"];
+	var y = ["сто", "десять", "двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят", "семьдесят", "восемьдесят", "девяносто"];
+	var z = ["тысяча", "сто", "двести", "триста", "четыреста", "пятьсот", "шестьсот", "семьсот", "восемьсот", "девятьсот"];
+	
+	if(arg > 100 && arg < 1000){
+
+		var arg1 = (arg - (arg % 100)) / 100,
+			arg2 = ((arg % 100) - arg%10) / 10,
+			arg3 = arg % 10;
+		return z[arg1] + " " + y[arg2] + " " + x[arg3];
+
+	} else if(arg >= 0 && arg < 20){
+
+		return x[arg];
+
+	} else if(arg > 20 && arg < 100){
+
+		var arg2 = ((arg % 100) - arg % 10) / 10;
+		var	arg3 = arg % 10;
+		return y[arg2] + " " + x[arg3];
+
+	} else if(arg == 10){
+		return y[1];
+
+	} else if (arg == 100){
+		return z[1];
+	}
+}
+
+var w = 559;
+console.log(`Число ${w} прописью - ${word(w)}`);
 
 
 
