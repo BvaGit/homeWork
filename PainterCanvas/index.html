@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Paint Canvas</title>
+</head>
+<body>
+    <h1 class="header">PAINTER</h1>
+    <!--<div class="painter">
+        <canvas class="painter__mycanvas" id="idCanvas" width="600" height="400"></canvas>
+    </div>-->
+    <div class="painter">
+        <canvas id="idCanvas"></canvas>
+    </div>
+    <button id="save">Save</button>
+
+    
+    <div class="control-color">
+        <p class="control-color__title">Color:</p>
+        <div class="control-color__palette">
+            <input type="color" class="control-color__edit">
+        </div>
+    </div>
+
+    <div class="control-panel">
+        <p class="control-panel__title">Толщина линии</p>
+        <input type="range" class="control-panel__range" min="1" max="50" value="10">
+        <div class="control-panel__width"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

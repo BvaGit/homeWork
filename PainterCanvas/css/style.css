@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #555555;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.painter {
+  width: 600px;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 0 10px #ccc;
+          box-shadow: 0 0 10px #ccc;
+}
+
+.control-color {
+  display: inline-block;
+  border: 1px solid #555555;
+  position: absolute;
+  top: 67px;
+  left: 285px;
+}
+
+.control-color__title {
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color: #555555;
+  color: #fff;
+  cursor: move;
+  padding: 5px;
+}
+
+.control-color__edit {
+  width: 100%;
+}
+
+.control-color__palette {
+  padding: 5px;
+}
+
+.control-color__item {
+  width: 100%;
+  height: 20px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.control-color__item:hover {
+  outline: 1px solid #555555;
+}
+
+.control-panel {
+  display: inline-block;
+  position: absolute;
+  top: 67px;
+  left: 993px;
+}
+
+.control-panel__title {
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color: #555555;
+  color: #fff;
+  cursor: move;
+  padding: 5px;
+}
+
+.control-panel__range {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.control-panel__width {
+  width: 50%;
+  height: 1px;
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+/*# sourceMappingURL=style.css.map */
